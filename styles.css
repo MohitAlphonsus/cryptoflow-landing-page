@@ -170,7 +170,8 @@ p {
 .section-features,
 .section-how,
 .section-testimonials,
-.section-pricing {
+.section-pricing,
+.section-faq {
   padding: 10rem 5rem;
 }
 
@@ -610,4 +611,64 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/*---------------*\
+  # SECTION FAQ
+\*---------------*/
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.faqs__faq {
+  background-color: rgba(var(--color-text-light-2), .1);
+  border: 1px solid rgba(var(--color-text-light-2), .2);
+  border-radius: 9px;
+}
+
+.faqs__header {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-medium);
+  min-height: 3rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.faqs__header::after {
+  content: '\203A';
+  margin-left: auto;
+  transform: rotate(90deg);
+  font-size: var(--font-size-5);
+  transition: all .3s ease;
+}
+
+.faqs__header.active {
+  color: rgb(var(--color-primary));
+}
+
+.faqs__header.active::after {
+  transform: rotate(270deg);
+  transform-origin: center;
+}
+
+.faqs__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+.faqs__body p {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-1);
+  color: rgb(var(--color-text-light-2));
+  border-top: 1px solid rgba(var(--color-primary-dark), .2);
 }

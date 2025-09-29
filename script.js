@@ -6,6 +6,7 @@ const dotsContainer = document.querySelector('.carousel-dots');
 const ratingStarsEl = document.querySelectorAll('.testimonial__rating');
 const proPricingEl = document.getElementById('pro-pricing');
 const enterprisePricingEl = document.getElementById('enterprise-pricing');
+const faqHeaders = document.querySelectorAll('.faqs__header');
 
 // Stars
 ratingStarsEl.forEach(starEl => {
@@ -86,6 +87,19 @@ switchBtns.forEach(switchBtn => {
 			switchBtns[1].classList.remove('active');
 			proPricingEl.innerText = `$${proMonthlyPrice}`;
 			enterprisePricingEl.innerText = `$${enterpriseMonthlyPrice}`;
+		}
+	});
+});
+
+// FAQ
+faqHeaders.forEach(header => {
+	header.addEventListener('click', function (e) {
+		header.classList.toggle('active');
+		const faqBody = header.nextElementSibling;
+		if (header.classList.contains('active')) {
+			faqBody.style.maxHeight = faqBody.scrollHeight + 'px';
+		} else {
+			faqBody.style.maxHeight = 0;
 		}
 	});
 });
