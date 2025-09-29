@@ -97,13 +97,11 @@ p {
   margin-bottom: 6rem;
 }
 
+
 .section-heading .heading-secondary {
   font-size: var(--font-size-10);
 }
 
-.section-features {
-  padding: 10rem 5rem;
-}
 
 .heading-primary {
   font-size: var(--font-size-20);
@@ -157,6 +155,13 @@ p {
 
 .btn--secondary:hover {
   filter: contrast(90%);
+}
+
+
+.section-features,
+.section-how,
+.section-testimonials {
+  padding: 10rem 5rem;
 }
 
 /*---------------*\
@@ -308,15 +313,18 @@ p {
 
 /*---------------*\
   # SECTION FEATURES
+  # SECTION HOW
 \*---------------*/
 
-.features {
+.features,
+.how-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: 3rem;
 }
 
-.features__feature {
+.features__feature,
+.step {
   background-color: rgba(var(--color-text-light-2), .1);
   border-radius: 1rem;
   border: 1px solid rgba(var(--color-text-light-2), .2);
@@ -325,9 +333,11 @@ p {
   flex-direction: column;
   align-items: start;
   gap: 2rem;
+  width: 100%;
 }
 
-.features__feature span {
+.features__feature span,
+.step span {
   background-color: rgba(var(--color-primary), .2);
   padding: 1.4rem;
   border-radius: 5px;
@@ -337,7 +347,103 @@ p {
 
 }
 
-.features__feature i {
+.features__feature i,
+.step i {
   font-size: var(--font-size-4);
   color: rgb(var(--color-primary));
+}
+
+.how-steps {
+  margin-bottom: 6rem;
+}
+
+.step {
+  position: relative;
+}
+
+.step>*:last-child {
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: rgb(var(--color-primary-dark-2));
+  border: 1px solid rgb(var(--color-primary));
+  font-size: var(--font-size-2);
+  color: rgb(var(--color-primary));
+  font-weight: var(--font-weight-bold);
+}
+
+.how-action {
+  text-align: center;
+}
+
+/*---------------*\
+  # SECTION TESTIMONIALS
+\*---------------*/
+
+.testimonials {}
+
+.testimonial {
+  background-color: rgba(var(--color-text-light-2), .1);
+  border-radius: 1rem;
+  border: 1px solid rgba(var(--color-text-light-2), .2);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonial__rating {}
+
+.testimonial__quote {
+  font-size: var(--font-size-4);
+}
+
+.testimonial__profile {
+  display: grid;
+  grid-template-columns: 6rem .1fr;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.testimonial__photo {
+  grid-column: 1 / 2;
+  grid-row: 1 / -3;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 2px solid rgb(var(--color-primary));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.testimonial__photo--1 {
+  background-image: url(/img/profile-01.jpg);
+}
+
+.testimonial__photo--2 {
+  background-image: url(/img/profile-02.jpg);
+}
+
+.testimonial__photo--3 {
+  background-image: url(/img/profile-03.jpg);
+}
+
+.testimonial__photo--4 {
+  background-image: url(/img/profile-04.jpg);
+}
+
+.testimonial__name {
+  font-size: var(--font-size-2);
+  width: max-content;
+  align-self: end;
+}
+
+.testimonial__desg {
+  font-size: var(--font-size-1);
+  color: rgb(var(--color-text-light-2));
+  width: max-content;
+  align-self: start;
 }
