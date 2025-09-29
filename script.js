@@ -17,41 +17,6 @@ ratingStarsEl.forEach(starEl => {
 	}
 });
 
-//  Carousel
-let index = 0;
-
-// Create dots dynamically
-items.forEach((_, i) => {
-	const dot = document.createElement('button');
-	if (i === 0) dot.classList.add('active');
-	dotsContainer.appendChild(dot);
-});
-
-const dots = dotsContainer.querySelectorAll('button');
-
-function updateCarousel() {
-	track.style.transform = `translateX(-${index * 100}%)`;
-
-	// update dots
-	dots.forEach(dot => dot.classList.remove('active'));
-	dots[index].classList.add('active');
-}
-
-function moveCarousel() {
-	index = (index + 1) % items.length;
-	updateCarousel();
-}
-
-dots.forEach((dot, i) => {
-	dot.addEventListener('click', () => {
-		index = i;
-		updateCarousel();
-	});
-});
-
-// autoplay every 3s
-setInterval(moveCarousel, 5000);
-
 // BUTTON SWITCH
 
 const proMonthlyPrice = 19;
