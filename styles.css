@@ -92,23 +92,17 @@ p {
 .section-heading {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-align: center;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 6rem;
 }
-
-
-.section-heading .heading-secondary {
-  font-size: var(--font-size-10);
-}
-
 
 .heading-primary {
   font-size: var(--font-size-20);
 }
 
-.heading-tertiary {
-  font-size: var(--font-size-5);
+.heading-secondary {
+  font-size: var(--font-size-10);
 }
 
 .heading-secondary,
@@ -116,6 +110,14 @@ p {
   background: var(--text-gradient);
   color: transparent;
   background-clip: text;
+}
+
+.heading-tertiary {
+  font-size: var(--font-size-5);
+}
+
+.heading-quaternary {
+  font-size: var(--font-size-4);
 }
 
 .sub-text-primary {
@@ -157,10 +159,18 @@ p {
   filter: contrast(90%);
 }
 
+.btn--tertiary {
+  background-color: rgba(var(--color-text-light-2), .2);
+}
+
+.btn--tertiary:hover {
+  background-color: rgba(var(--color-text-light-2), .6);
+}
 
 .section-features,
 .section-how,
-.section-testimonials {
+.section-testimonials,
+.section-pricing {
   padding: 10rem 5rem;
 }
 
@@ -428,8 +438,8 @@ p {
 .testimonial {
   min-width: 100%;
   background-color: rgba(var(--color-text-light-2), .1);
-  border-radius: 1rem;
   border: 1px solid rgba(var(--color-text-light-2), .2);
+  border-radius: 1rem;
   padding: 3rem 3rem 4rem 3rem;
   display: flex;
   flex-direction: column;
@@ -497,5 +507,107 @@ p {
 }
 
 /*---------------*\
-  # SECTION TESTIMONIALS
+  # SECTION PRICING
 \*---------------*/
+.switch-button {
+  background-color: rgba(var(--color-text-light-2), .1);
+  border: 1px solid rgba(var(--color-text-light-2), .2);
+  border-radius: 3rem;
+  margin-top: 2rem;
+}
+
+.switch-button button {
+  border: none;
+  border-radius: inherit;
+  background: none;
+  padding: 1.6rem 3.2rem;
+  font-size: var(--font-size-2);
+  color: rgb(var(--color-text-light-2));
+  cursor: pointer;
+}
+
+.switch-button button.active {
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-text));
+  font-weight: var(--font-weight-semibold);
+}
+
+.switch-button button span {
+  font-size: var(--font-size-0);
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.pricing__box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding: 5rem 3rem;
+  border-radius: 9px;
+  background-color: rgba(var(--color-text-light-2), .1);
+  border: 1px solid rgba(var(--color-text-light-2), .2);
+}
+
+.pricing__price {
+  font-size: var(--font-size-9);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 1px;
+  position: relative;
+  align-self: start;
+}
+
+.pricing__box:not(:first-child) .pricing__price::after {
+  content: '/month';
+  position: absolute;
+  left: calc(100% + 1rem);
+  bottom: 1rem;
+  font-size: var(--font-size-1);
+  letter-spacing: 1px;
+}
+
+.pricing__box:nth-child(2) {
+  border: 1px solid rgb(var(--color-primary));
+  box-shadow: 0 0 1.6rem rgba(var(--color-primary), .4);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing__box:nth-child(2)::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: .5rem;
+  text-align: center;
+  background-color: rgb(var(--color-primary));
+  font-size: var(--font-size-1);
+}
+
+.pricing__tagline {
+  font-size: var(--font-size-2);
+}
+
+.pricing__list {
+  list-style: none;
+  color: rgb(var(--color-text-light-2));
+  font-size: var(--font-size-1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.pricing__list li:first-child {
+  color: rgb(var(--color-text-light-1));
+}
+
+.pricing__list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
